@@ -39,7 +39,7 @@ class Account:
     def text(self):
         with open("suii.csv", "w", encoding = "utf8") as f:
             if self.ID:
-                f.write(str(self.ID) + ", ")
+                f.write("  " + str(self.ID) + ", ")
             else:
                 f.write("%, ")
 
