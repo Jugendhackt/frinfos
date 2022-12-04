@@ -152,7 +152,16 @@ def modify_user():
             else:
                 return "fehler",400
                 continue
-            
+
+
+
+@app.route("/modify_user", methods = ['POST'])
+def get_friendlist():
+    request.data
+
+
+
+
 def get_true_random(text):
         rand_number = random.randint(0, 99999999)
         for line in text:

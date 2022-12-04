@@ -98,3 +98,5 @@ class Account:
             else:
                 f.write("%, ")
     
+    def add_friend(self, friend_ID) -> None:
+        self.friendlist.apend(friend_ID)
