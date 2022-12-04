@@ -77,6 +77,7 @@ def create_user():
 @app.route("/modify_user", methods = ['POST'])
 def modify_user():
     the_ID = request.args.get('ID', '')
+    print(request.args.get('ID', ''))
     with open("suii.csv", "r+", encoding = "utf8") as f:
         lines = f.readlines()
         x = 0
@@ -87,46 +88,46 @@ def modify_user():
                     if x != y:
                         f.write(l)
                     y += 1
-                name = request.args.get('name', '')
+                name = request.data.get('name', '')
                 field_1 = Field(
-                    request.args.get('key1', ''),
-                    request.args.get('value1', ''),
+                    request.data.get('key1', ''),
+                    request.data.get('value1', ''),
                 )
                 field_2 = Field(
-                    request.args.get('key2', ''),
-                    request.args.get('value2', ''),
+                    request.data.get('key2', ''),
+                    request.data.get('value2', ''),
                 )
                 field_3 = Field(
-                    request.args.get('key3', ''),
-                    request.args.get('value3', ''),
+                    request.data.get('key3', ''),
+                    request.data.get('value3', ''),
                 )
                 field_4 = Field(
-                    request.args.get('key4', ''),
-                    request.args.get('value4', ''),
+                    request.data.get('key4', ''),
+                    request.data.get('value4', ''),
                 )
                 field_5 = Field(
-                    request.args.get('key5', ''),
-                    request.args.get('value5', ''),
+                    request.data.get('key5', ''),
+                    request.data.get('value5', ''),
                 )
                 field_6 = Field(
-                    request.args.get('key6', ''),
-                    request.args.get('value6', ''),
+                    request.data.get('key6', ''),
+                    request.data.get('value6', ''),
                 )
                 field_7 = Field(
-                    request.args.get('key7', ''),
-                    request.args.get('value7', ''),
+                    request.data.get('key7', ''),
+                    request.data.get('value7', ''),
                 )
                 field_8 = Field(
-                    request.args.get('key8', ''),
-                    request.args.get('value8', ''),
+                    request.data.get('key8', ''),
+                    request.data.get('value8', ''),
                 )
                 field_9 = Field(
-                    request.args.get('key9', ''),
-                    request.args.get('value9', ''),
+                    request.data.get('key9', ''),
+                    request.data.get('value9', ''),
                 )
                 field_10 = Field(
-                    request.args.get('key10', ''),
-                    request.args.get('value10', ''),
+                    request.data.get('key10', ''),
+                    request.data.get('value10', ''),
                 )
                 mod_user = Account(
                     ID = the_ID,
@@ -147,7 +148,9 @@ def modify_user():
                 with open("suii.csv", "w", encoding = "utf8") as f:
                     f.write("\n")
                     mod_user.text()
+                    return "oke",200
             else:
+                return "fehler",400
                 continue
             
 def get_true_random(text):

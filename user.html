@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./user.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="outerbox">
+        <div class="innerbox">
+            <div class="avatarbox">
+                <img src="./avatar.jpg" alt="avatar" width="300" height="300">
+            
+            </div>
+            <div class="databox" id="databox"> 
+                
+            </div>
+            </div>
+        </div>
+    </div>
+    <script>
+let user={
+    name:`Fortnite`,
+   fields:[
+    "geburtstag=01.01.2000",
+"adresse=hauptstrasse 1"
+   ]
+}
+console.log(user.name) 
+let namefield= document.createElement(`div`)
+namefield.innerHTML=`name: ${user.name}`
+document.getElementById(`databox`).appendChild(namefield)
+user.fields.forEach((value)=>{
+    let namefield= document.createElement(`div`)
+    const words = value.split('=');
+console.log(words[1]);
+namefield.innerHTML=`${words[0]} ${words[1]}`
+document.getElementById(`databox`).appendChild(namefield)
+})
+
+
+    </script>
+</body>
+
+</html>

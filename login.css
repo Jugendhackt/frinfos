@@ -1,0 +1,59 @@
+li {
+    list-style-type: none;
+    width: 292px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+body,html    {
+    background-image: url(alpaka.jpg);
+height: 100%;
+width: 100%;
+}
+.outerbox {
+    height: 150%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.avatarbox {
+height: 300px;
+width: 300px;
+}
+.avatarbox img{
+    max-width: 300px;
+    max-height: 300px;
+}
+.dataitem {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.databox input{
+    width: 100%;
+    width: 292px;
+}
+.databox {
+    width: 300px;
+    max-width: 300px;
+    
+}
+.databox label{
+    word-wrap: break-word;
+}
+button {
+    width: 300px;
+}
+
+.databox > div{
+    margin-top: 16px;
+}

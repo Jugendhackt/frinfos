@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./user.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="outerbox">
+        <div class="innerbox">
+            <div class="avatarbox">
+                <img src="./avatar.jpg" alt="avatar">
+
+            </div>
+
+            <form action="http://127.0.0.1:5000/modify_user?ID=123" class="databox" id="form1" method="POST">
+                <input type="submit" id="high">
+                <div>
+                    Name* <input type="text" name="name" placeholder="Max Mustermann">
+                </div>
+
+                <div>
+                    <input type="text" name="key1" placeholder="z.B. Geburtstag">
+                    <input type="text" name="value1" placeholder="01.01.2000">
+
+                </div>
+            </form>
+            <button id="addinfobutton" onclick="addinfos()">Weitere Eingabe</button>
+
+
+        </div>
+
+
+
+</body>
+<script href="./edituser.js">
+    let counter=1
+    function addinfos(e) {
+        if (counter<10){
+        ++counter;
+        e.preventDefault();
+        console.log("Alpacas");
+        let element =document.createElement("div")
+        element.innerHTML=`<input type="text" name="key${counter}" placeholder="...">
+            <input type="text" name="value${counter}" placeholder="...">`
+        document.getElementById("form1").appendChild(element)
+        }
+    }
+    document.getElementById("addinfobutton").onclick = addinfos;
+</script>
+
+</html>
